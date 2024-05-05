@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JQuery GET Method</h1>
+    <div id="box" class="test abc" style="background-color: tan;border: 2px solid black;width: 80%;padding: 10px;">
+        <h2>Click Here</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores quibusdam voluptas architecto
+            consectetur voluptatibus dicta eius. Obcaecati, possimus? Sequi delectus ratione libero temporibus
+            consequuntur corporis ipsum quam, vel quae!
+            </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var a=$('#box p').html();//this will give paragraph,if any tag present b/w it then that also will be printed
+            console.log(a)
+        });
+        $(document).ready(function(){
+            var a=$('#box p').text();//it only fetch text out from the box
+            console.log(a)
+        });
+        $(document).ready(function(){
+            var a=$('#box').attr();//o/p--> test abc
+            console.log(a)
+        });
+    </script>
+</body>
+
+</html>

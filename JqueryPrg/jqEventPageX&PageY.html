@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery PageX and PageY properties </h1>
+    <div id="result" style="text-align: center;width: 400px;height: 200px;margin: auto;background-color: skyblue;border: 2px solid black;">
+    </div>
+    <div id="box" style="border-radius: 50%;width: 20px;height: 20px;background-color: burlywood;"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+        $(document).mousemove(function (event) {
+                $("#result").html("X :"+event.pageX+"<br>Y :"+event.pageY).css({"font-weight":"bolder","font-size":"15px","display": "flex","justify-content": "center","align-items":" center"});
+               
+                var x=event.pageX;
+                var y=event.pageY;
+                $("#box").offset({top:y,left:x});
+
+            });
+        });
+    </script>
+</body>
+
+</html>

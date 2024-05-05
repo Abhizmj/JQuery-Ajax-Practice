@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Event stopPropagation() Properties </h1>
+    <h3 style="margin: auto;text-align: center;padding: 10px;">Click each section inside the box </h3>
+    <div id="result"
+        style="text-align: center;width: 30%;height: 25%;margin: auto;background-color:lime;border: 2px solid black;padding: 10px;">
+        <h2>Hello Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        
+        </div><br><br>
+
+    <div id="box" style="text-align: center;color: red;margin: auto;"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+         $("p").each(function(i){
+            $(this).on("click",{value:i},function(event){
+                $("#box").html("<h3>Paragraph number :"+(event.data.value+1)+"</h3>")
+            })
+         })   
+        });
+    </script>
+</body>
+
+</html>

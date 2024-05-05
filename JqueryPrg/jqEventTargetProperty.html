@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Event Target Properties </h1>
+    <h3 style="margin: auto;text-align: center;padding: 10px;">Click each Section inside the division </h3>
+    <div id="result"
+        style="text-align: center;width: 30%;height: 25%;margin: auto;background-color: skyblue;border: 2px solid black;padding: 10px;">
+        <h2>Hello Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium asperiores ut voluptates delectus commodi
+            dolore doloremque sunt nesciunt recusandae impedit at temporibus</p>
+        <button>Test Button</button>    
+        </div><br><br>
+
+    <div id="box" style="text-align: center;color: red;margin: auto;"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#result").on("click",function(){
+
+                if(event.target.nodeName=="P") $("#box").html("Target Element You Clicked :Paragraph").css({"font-weight":"bolder","font-size":"15px"});
+                else if(event.target.nodeName=="H2") $("#box").html("Target Element You Clicked :H2 heading").css({"font-weight":"bolder","font-size":"15px"});
+                else if(event.target.nodeName=="BUTTON") $("#box").html("Target Element You Clicked :Button").css({"font-weight":"bolder","font-size":"15px"});
+                else $("#box").html("You have not Clicked to any Section"+event.target.innerHTML).css({"font-weight":"bolder","font-size":"15px","color":"green"});
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery hasClass() Method</h1><br>
+    <div id="box" style="height: 20%;width: 40%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;" class="">
+      <p>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore vero labore exercitationem voluptate
+        dignissimos et neque quaerat? Maiores quia ex optio animi facere minima natus exercitationem voluptatibus
+        debitis. Dolores.</p>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="hasClassBtn" >Has Class</button>
+        <button id="hasNoClassBtn" >If no Class Click Here</button>
+    </div>
+    <br>
+    <div id="box2"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#hasNoClassBtn").hide();
+           
+            $("#hasClassBtn").click(function(){
+                var v=$("#box").hasClass('test');
+                if(v) $("#box2").html("<h4>Above Box Has Class : YES</h4>");
+                else {
+                    $("#box2").html("<h4>Above Box Has Class : NO</h4>");
+                    $("#box").attr('class','abc');
+                    
+                    $("#hasClassBtn").hide();
+                    $("#hasNoClassBtn").show();
+
+                }
+                $("#box2").css("text-align","center");                
+            });
+            $("#hasNoClassBtn").click(function(){
+                $(".abc").css("background-color","yellow");
+            });
+        });
+    </script>
+</body>
+
+</html>

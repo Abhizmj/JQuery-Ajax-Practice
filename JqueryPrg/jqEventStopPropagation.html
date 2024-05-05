@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Event stopPropagation() Properties </h1>
+    <h3 style="margin: auto;text-align: center;padding: 10px;">Click each section inside the box </h3>
+    <div id="result"
+        style="text-align: center;width: 30%;height: 25%;margin: auto;background-color:lime;border: 2px solid black;padding: 10px;">
+        <h2>Hello Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium asperiores ut voluptates delectus commodi
+            dolore doloremque sunt nesciunt recusandae impedit at temporibus</p>
+        <button style="background-color: blue;color: white;">Button</button>    
+        </div><br><br>
+
+    <div id="box" style="text-align: center;color: red;margin: auto;"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#result").click(function(){
+               alert("The div element was clicked");
+            });
+            $("h2").click(function(event){
+                event.stopPropagation();//due to this it will stop showing division click,it only alert for h2,when h2 is clicked
+               alert("The h2 element was clicked");
+            });
+            $("p").click(function(event){
+                event.stopPropagation();
+               alert("The p element was clicked : "+event.isPropagationStopped());
+            });
+            $("button").click(function(event){
+                // event.stopPropagation();
+               alert("The button element was clicked :"+event.isPropagationStopped());
+            });
+        });
+    </script>
+</body>
+
+</html>

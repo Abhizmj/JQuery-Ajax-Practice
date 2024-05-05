@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Hide() and Show() Method</h1><br>
+    <div id="box" style="height: 20%;width: 40%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;" class="">
+        <h3>Hello Box</h3>
+        <p>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore vero labore exercitationem voluptate
+        dignissimos et neque quaerat? Maiores quia ex optio animi facere minima natus exercitationem voluptatibus
+        debitis. Dolores.</p>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="hide" >Hide</button>
+        <button id="show" >Show</button>
+        <button id="shide" >Hide Smoothly</button>
+        <button id="showSmooth" >Show Smoothly</button><br><br>
+        <button id="showTime" >Show In Millisec</button>
+        <button id="hideTime" >Hide In Millisec</button><br><br>
+        <button id="callback" >Hide CallBack fn</button><br><br>
+        <button id="toggle" >Toggle</button>
+        
+
+    </div>
+    <br>
+    <div id="box2"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("#box p").hide();
+            });
+            $("#show").click(function(){
+                $('h4').hide();
+                $("#box p").show();
+            });
+            $("#shide").click(function(){
+                $('h4').hide();
+                $("#box").hide('slow');//here we can also use "fast" for fast response
+            });
+            $("#showSmooth").click(function(){
+                $('h4').hide();
+                $("#box").show('slow');
+            });
+            $("#showTime").click(function(){
+                $('h4').hide();
+                $("#box").show(1000);// 1000-> 1 sec
+            });
+            $("#hideTime").click(function(){
+                $("#box").hide(1000);// 1000-> take 1 sec to hide
+            });
+            $("#callback").click(function(){
+                $("#box p").hide(1000,function(){
+                    
+                    $("#box h4").empty();
+                    $("#box h3").append("<h4>Text get hidden</h4>").show(1000);
+                    $("h4").css("color","red");
+                    
+                });// When box get hidden the this function will work
+            });
+            
+            $("#toggle").click(function(){
+                $("#box").toggle(1000);//work for both hide and show
+            });
+           
+        });
+    </script>
+</body>
+
+</html>

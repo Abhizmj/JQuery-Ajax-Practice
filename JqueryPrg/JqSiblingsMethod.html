@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Siblings Method </h1>
+    
+        <div id="outer"
+            style="height: 50%;width: 90%;background-color: orange;padding: 10px;border: 2px solid black;margin: auto;text-align: center;">
+            <h2>Outer</h2>
+            <div id="inner"
+                style="height: 30%;width: 80%;background-color: pink;padding: 10px;border: 2px solid black;margin: auto;">
+                <h2 id="child-head">Inner</h2>
+                <div id="child-A"
+                    style="height: 10%;width: 10%;background-color: lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    A</div>
+                <div id="child-B"
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    B</div>
+                <div id="child-C"
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    C</div>
+                <div class="test1"
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    D</div>
+                <div
+                    class="test" style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    E</div>
+            </div>
+        </div>
+
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="child">Children</button>
+        <button id="ParticularChild">Particular Child</button>
+        <button id="next">Next Siblings</button>
+        <button id="nextAll">Next All Siblings</button>
+        <button id="previous">Previous Siblings</button><br><br>
+        <button id="nextUntil">Next Until</button>
+        <button id="previousUntil">Previous Until</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#child").click(function(){
+                $("#child-C").siblings().css("background-color","lime");//under parent or sibling at same level,not its child
+            });
+            $("#ParticularChild").click(function(){
+                $("#child-C").siblings("h2").css("background-color","lime");//target specific siblings
+                $("#child-C").siblings(".test").css("background-color","lime");
+            });
+            $("#next").click(function(){
+                $("#child-C").next().css("background-color","lime");//target next siblings
+            });
+            $("#nextAll").click(function(){
+                $("#child-C").nextAll().css("background-color","lime");//target next All siblings
+            });
+            $("#previous").click(function(){
+                $("#child-C").prev().css("background-color","lime");//target pervious siblings
+            });
+            $("#previousAll").click(function(){
+                $("#child-C").prevAll().css("background-color","lime");//target pervious All siblings
+            });
+            $("#nextUntil").click(function(){
+                $("#child-B").nextUntil(".test").css("background-color","lime");//target next siblings until class test,except test(between)
+            });
+            $("#previousUntil").click(function(){
+                $(".test").prevUntil("#child-A").css("background-color","lime");//target next siblings until class test,except test(between)
+            });
+        });
+    </script>
+</body>
+
+</html>

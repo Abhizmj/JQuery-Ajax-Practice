@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Stop() Method</h1><br>
+    <div id="box" style="height: 40%;width: 10%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;position: relative;">
+        <h3>Hello Box</h3>
+        
+    </div>
+    <!-- <div id="box2"></div> -->
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="animate" >Animate</button>
+        <button id="animateMulti" >Animate serially</button>
+        <button id="stop" >Stop</button><br><br>
+        <button id="stopFinishPoint" >Stop To Finish Point</button><br><br>
+   
+          
+    </div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animate").click(function(){
+               $("#box").animate({//this only work when position is relative for  
+                 left:"200px",
+                 width:"150px",
+                 fontSize:"15px",
+                 borderWidth:"5px"   
+               })
+            });
+            $("#animateMulti").click(function(){
+               $("#box").animate({left:"200px",fontSize:"15px",width:"+=80"},2000);
+               $("#box").animate({top:"200px"},1000);
+               $("#box").animate({left:"-200px"},1000);
+               $("#box").animate({top:"0px"},1000);
+               $("#box").animate({left:"0px",fontSize:"12px",width:"10%"},2000);
+            });
+            
+            $("#stop").click(function(){
+                $("#box").stop(true);
+            })
+            $("#stopFinishPoint").click(function(){
+                $("#box").stop(true,true);
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Filtering Method </h1>
+    <div id="first"
+        style="background-color: #e2e2e2;text-align: center;width: 30%;height: 20%;border: 2px solid black;margin: auto;padding: 10px;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, optio. Numquam, vitae dolore sit at, porro,
+            Est, modi sequi.</p>
+        <p class="test">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div style="text-align: center">
+        <ul style="display: inline-block;">
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+    <div id="second"
+        style="background-color: burlywood;text-align: center;width: 30%;height: 20%;border: 2px solid black;margin: auto;padding: 10px;">
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, optio. Numquam, vitae dolore sit at, porro,
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="targetFirst">Section First1</button>
+        <button id="targetSecond">Section First2</button>
+        <button id="targetLast">Last S1 para</button>
+        <button id="targetList">List</button><br><br>
+        <button id="specific">Specific list</button>
+        <button id="filter">Filter</button>
+        <button id="not">Except one</button>
+        <button id="slice">Slice</button>
+        <button id="slice2">Slice until</button>
+        
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#targetFirst").click(function(){
+                $("p").first().css("background-color","yellow");//target first para in page
+            });
+            $("#targetSecond").click(function(){
+                $("#second p").first().css("background-color","yellow");//target first para in second division box 
+            });
+            $("#targetLast").click(function(){
+                $("#first p").last().css("background-color","yellow");//target last para in page of first division box
+            });
+            $("#targetList").click(function(){
+                $("ul li").last().css("background-color","yellow");//target last list of unorder list in page 
+            });
+            $("#specific").click(function(){
+                $("ul li").eq(2).css("background-color","yellow");//target 3rd list of unorder list in page 
+                $("p").eq(2).css("background-color","lime");//target 3rd para of in page 
+                $("ul li").eq(-1).css("background-color","blue");//target last list of unorder list of in page 
+            });
+            $("#filter").click(function(){
+                $("p").filter(".test").css("background-color","yellow");//target para which have class as test in page 
+                //or  $("p.test").css("background-color","yellow");
+            });
+            $("#not").click(function(){
+                $("p").not(".test").css("background-color","yellow");//target all para except which have class as test in page 
+                
+            });
+            $("#slice").click(function(){
+                $("ul li").slice(2).css("background-color","lime");//target that list below which is sliced 
+                
+            });
+            $("#slice2").click(function(){
+                $("ul li").slice(1,3).css("background-color","lime");//target limited one except 3rd index of the list
+            });
+        });
+    </script>
+</body>
+
+</html>

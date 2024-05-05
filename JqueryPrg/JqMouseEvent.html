@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        background-color: bisque;
+        height: 150px;
+        width: 400px;
+        border: 2px solid black;
+        font-size: large;
+    }
+</style>
+<body>
+    <h2>Mouse Event</h2>
+    <div id="box">
+        <b>Click This section</b>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus quaerat itaque quibusdam fuga dolorem nihil
+            nobis laboriosam exercitationem consectetur atque, veniam commodi. Eos obcaecati blanditiis optio sequi
+            ullam iure vitae.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('#box').click(function(){
+            $(this).css('background-color','yellow')
+                        
+        });
+        $('#box').dblclick(function(){
+            $(this).css('background-color','')
+                        
+        });
+        $('#box').contextmenu(function(){
+            $(this).css('background-color','blue')
+                        
+        });
+        $('#box').mouseenter(function(){
+            $(this).css('background-color','tan')
+                        
+        });
+        $('#box').mouseleave(function(){
+            $(this).css('background-color','red')
+                        
+        });
+
+    });
+</script>
+</body>
+
+</html>

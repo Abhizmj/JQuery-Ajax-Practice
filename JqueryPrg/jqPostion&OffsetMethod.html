@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">Jquery Position() and Offset() Method</h1>
+    <div id="box" style="background-color: #e2e2e2;border: 2px solid black;padding: 15px;width: 30%;margin: auto;">
+        <h2>Hello Box</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam velit perferendis, esse sequi omnis harum
+            exercitationem explicabo totam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias modi ab eaque
+            repellat quas porro molestias </p>
+
+    </div>
+    <div id="box2"></div>
+    <br>
+
+    <div style="text-align: center; margin: auto;padding: 10px;">
+        <button id="position">Position</button>
+        <button id="setPosition">Set Position</button>
+        <button id="offset">Offset</button>
+        <button id="setOffset">Set Offset</button>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#position").click(function(){
+                $("#box2 p").empty();
+                var pos = $("#box").position();//work according to parent
+                $("<p>Position TOP: "+pos.top+"</p>").appendTo("#box2");
+                $("<p>Position LEFT: "+pos.left+"</p>").appendTo("#box2");
+
+                $("#box2").css({"text-align":"center","font-weight":"bold"})
+            });
+            $("#offset").click(function(){
+                $("#box2 p").empty();
+                var pos = $("#box").offset();
+                $("<p>Position TOP: "+pos.top+"</p>").appendTo("#box2");
+                $("<p>Position LEFT: "+pos.left+"</p>").appendTo("#box2");
+
+                $("#box2").css({"text-align":"center","font-weight":"bold"})
+            });
+            $("#setOffset").click(function(){
+                $("#box2 p").empty();
+                $("#box").offset({top:0,left:0});
+                               
+               });
+            $("#setPosition").click(function(){
+                $("#box2 p").empty();
+                $("body h2").offset({top:100,left:500});
+               
+               
+
+               });
+
+
+        });
+    </script>
+</body>
+
+</html>

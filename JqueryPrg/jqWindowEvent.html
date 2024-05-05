@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=sp, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JQuery Window Events</h1>
+    <div id="box" style="height: 200px;width: 80%;background-color: bisque;padding: 10px;border: 1px solid #000; overflow: auto;">
+        <h2>Click HERE</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit repellendus natus voluptas quo, ipsa vel! Vel
+        quidem ullam, quibusdam officia fuga velit aliquam minima placeat facere natus, odit itaque earum.
+        Eligendi dolore, explicabo cumque magni molestias neque quisquam unde quasi reprehenderit possimus ipsam velit
+        delectus placeat? Laboriosam, tempora, architecto consectetur sit quod exercitationem ipsa, suscipit laudantium
+        quae nostrum modi molestias!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique quam dolorum nobis sint quod nihil quidem
+        porro dicta doloribus enim, numquam perferendis, modi optio tempore voluptates vero perspiciatis facere
+        corrupti.
+        Doloribus repellendus obcaecati placeat ex soluta optio at amet voluptatem? Quaerat libero temporibus cumque
+        recusandae earum dolores eius fugit provident nihil. Ad autem, eligendi odit doloremque quo eius neque dolores.
+        Sed minima ad possimus deleniti at voluptatum, adipisci rem dolore eius sequi vero tenetur consectetur nam
+        soluta blanditiis qui harum maiores beatae atque perspiciatis praesentium odio. Porro inventore voluptatibus
+        ratione.
+        Inventore delectus, quod assumenda repellendus rem saepe velit. Consequatur voluptas error placeat nam mollitia
+        esse recusandae sed ratione provident, fuga quaerat voluptate, libero animi iure at rem perferendis doloremque
+        minima!
+        Nam mollitia unde, nemo est dolor libero! Laudantium inventore consequatur debitis rem eligendi omnis libero
+        vero nemo harum neque ullam quia dolorem consectetur officiis ad nobis, maiores distinctio natus illo.
+        Officia, error neque architecto porro, quos sint, in rem cupiditate necessitatibus quibusdam maiores voluptatem
+        magni ducimus? Earum aut blanditiis unde, ipsum quia ad possimus veritatis in dolore illo aliquam mollitia.
+        Neque, sapiente aliquam veritatis explicabo inventore rem. Molestias cumque deserunt alias unde maiores a, illo
+        temporibus? Praesentium hic eius dolorem! Ipsum aut reprehenderit totam deserunt repudiandae illum, aliquam
+        debitis fugiat!
+        Nam minus beatae omnis minima. Eius tenetur quaerat nisi? Quibusdam deleniti velit modi, dolore impedit maiores
+        eveniet deserunt ut, nobis, neque repellendus asperiores. Temporibus, doloremque inventore quia minima placeat
+        aperiam.
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, delectus. Eos accusamus expedita culpa magni
+    corrupti a incidunt optio doloribus facilis illum odit molestias laboriosam repellat, fugiat recusandae, in dolores.
+    Magnam, inventore! Blanditiis, in iste deleniti aliquam non perspiciatis magni vitae rerum cumque voluptas,
+    reprehenderit ducimus atque assumenda odit culpa odio praesentium eaque aliquid nesciunt suscipit fugit quidem! Et,
+    illum?
+    Necessitatibus facere dolorem non itaque saepe! Assumenda error quis minus accusamus et? Quae, delectus rerum.
+    Tempora fugiat nobis vel, ab cumque itaque quod error minima eligendi fugit voluptatum est deleniti?
+    Impedit dolorum ipsum maxime voluptatem unde omnis illum mollitia ducimus sunt reprehenderit nihil facere delectus
+    velit fugiat quas natus, vero optio est soluta. Distinctio neque enim nam nostrum fugiat eligendi.
+    Repellendus delectus consequatur consectetur rerum laborum quas hic, quibusdam similique consequuntur voluptatibus
+    vero excepturi fugit eligendi illum tenetur. Porro doloremque delectus nobis totam illo quod. Corrupti obcaecati
+    officia quos eligendi!
+    Corporis sit deserunt voluptas cum neque ducimus unde ipsum vitae temporibus dolorum. Fugiat dignissimos aspernatur
+    est blanditiis minus unde, veritatis eum, voluptas mollitia, quibusdam distinctio architecto. Fuga repellendus
+    aliquid vitae.
+    Laboriosam, harum laborum repellat aliquam delectus nulla possimus tenetur illum? Velit, vero. Fugiat ad minus
+    perferendis fugit aliquam suscipit praesentium veritatis, eum expedita asperiores cum ratione ullam nesciunt, illum
+    alias.
+    Accusantium magnam aliquid vitae laboriosam quibusdam, consequatur animi numquam ducimus fuga, voluptates sed ab
+    cumque architecto quae, id assumenda rerum aut cupiditate deserunt quia quos totam eligendi. Illum, assumenda
+    eligendi!
+    Quam iusto vitae molestiae dolore error. Corrupti eius mollitia consequatur ea quaerat rem atque officia eaque sit,
+    reprehenderit debitis illo consectetur id ratione qui maxime tempora alias ducimus dolore. Commodi.
+    Voluptatibus voluptatum deleniti nisi harum vitae, minima nam eaque, accusamus error at doloremque totam autem est?
+    Blanditiis, nemo soluta? Consequuntur labore eveniet expedita, vero cum nihil necessitatibus nam consectetur
+    aliquid!
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').scroll(function(){
+                console.log("You are scrolling")
+            });
+            $(window).resize(function(){
+                console.log("You are re size");
+            });
+        });
+    </script>
+</body>
+
+</html>

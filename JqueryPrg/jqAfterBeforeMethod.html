@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Jquery After and before Method</h2>
+    <div id="box" style="background-color: #e2e2e2;border: 2px solid black;padding: 15px;width: 30%;margin: auto;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam velit perferendis, esse sequi omnis harum
+            exercitationem explicabo totam? At, corrupti? Consequatur pariatur necessitatibus sed quam eveniet sapiente
+            vero. Debitis, temporibus.</p>
+
+    </div>
+    <div style="text-align: center; margin: auto;padding: 10px;">
+        <button id="after" >After</button>
+        <button id="before" style="text-align: center;">Before</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#after').click(function(){
+                $('#box').after("<h4>After : --> Abhishek</h4>") //before division tag
+                    $('h4').css({"color":"red","text-align":"center"});
+            });
+            $('#before').click(function(){
+                $('#box').before("<h3>Before : --> Abhishek</h3>") //after division tag
+                $('h3').css({"color":"green","text-align":"center"});
+            });
+        });
+    </script>
+</body>
+
+</html>

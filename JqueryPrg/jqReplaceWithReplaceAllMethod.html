@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Jquery ReplaceWith() and RplaceAll() Method</h1>
+    <div id="box" style="background-color: #e2e2e2;border: 2px solid black;padding: 15px;width: 30%;margin: auto;">
+        <h2>Hello Box</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam velit perferendis, esse sequi omnis harum
+            exercitationem explicabo totam? </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam velit perferendis, esse sequi omnis harum
+            exercitationem explicabo totam? </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam velit perferendis, esse sequi omnis harum
+            exercitationem explicabo totam?</p>
+    </div>
+    <br>
+  
+    <div style="text-align: center; margin: auto;padding: 10px;">
+        <button id="replaceWith">ReplaceWith</button>
+        <button id="replaceAll">ReplaceAll</button>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+           $("#replaceWith").click(function(){
+                $("#box p:first").replaceWith("<h4>Abhishek Kumar</h4>Normal text is used here");
+                $("#box h4").css("color","red");
+                
+                $("#box p:nth-child(4)").replaceWith("<h5>This get changed when replaceWith is clicked</h5>")
+                $("#box h5").css("color","green");
+                
+            });
+            $("#replaceAll").click(function(){
+                $("<span>Abhishek Kumar</span><br>").replaceAll("#box p");
+                $("#box span").css("color","blue");
+
+           });
+            
+           
+          
+        });
+    </script>
+</body>
+
+</html>

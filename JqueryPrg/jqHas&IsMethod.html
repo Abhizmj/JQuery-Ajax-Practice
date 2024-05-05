@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Has() and Is() Method </h1>
+    <div id="first"
+        style="background-color: #e2e2e2;text-align: center;width: 30%;height: 20%;border: 2px solid black;margin: auto;padding: 10px;">
+        <p>Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. Vitae, optio. Numquam, vitae dolore sit at, porro,
+            Est, modi sequi.</p>
+        <p class="test">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div style="text-align: center">
+        <ul style="display: inline-block;">
+            <li>Orange</li>
+            <li><span>Apple</span></li>
+            <li>Banana</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+    <!-- <div id="second" -->
+        <!-- style="background-color: burlywood;text-align: center;width: 30%;height: 20%;border: 2px solid black;margin: auto;padding: 10px;"> -->
+        <p class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, optio. Numquam, vitae dolore sit at, porro,
+        </p>
+        <p>Lorem ipsum dolor, sit <span class="test">amet consectetur adipisicing</span> elit.</p>
+        <p style="font-size: large;text-align: center;font-weight: bold;">Click on any Paragragh</p>
+    <!-- </div> -->
+    <div id="box2"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="has">Has</button>
+        <button id="hasList">Has in List and Para</button>
+        <button id="is">Is</button>
+        
+        
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+          $("#has").click(function(){
+            $("p").has("span").css("color","red");
+            $("p").has("b").css("background-color","yellow");
+
+          });  
+          $("#hasList").click(function(){
+            $("li").has("b,span").css({"color":"red","font-weight":"bolder","font-size":"15px"});
+            $("p").has(".test").css({"color":"blue","font-weight":"bolder","font-size":"15px"});
+          });
+          
+          //is() method only used in if condition--> it will give true or false as result
+          
+          $("#is").click(function(){
+            var t=$("p").parent().is("div");
+            if(t){
+                $("#box2 h3").empty();
+                $("#box2").append('<h3>Paragraph has division tag as parent : <span id="boolean">'+t+'</span></h3>');
+                // console.log($("p").parent().is("div"));
+                $("h3").css({"color":"red","text-align":"center"});
+                $("#boolean").css("color","green");
+
+            }
+          });  
+          $("#box2 h3").empty();
+                $("p").click(function(){
+                if($("p").parent().is("div")){
+                    $("#box2 h3").empty();
+                $("#box2").append('<h3>Paragraph has division tag as parent : <span id="boolean">'+$(this).parent().is("div")+'</span></h3>');
+                // console.log($("p").parent().is("div"));
+                $("h3").css({"color":"red","text-align":"center"})
+                $("#boolean").css("color","green")
+            }
+            })
+          
+        });
+    </script>
+</body>
+
+</html>

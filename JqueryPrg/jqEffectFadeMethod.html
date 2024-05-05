@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Fade() Method</h1><br>
+    <div id="box" style="height: 20%;width: 40%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;" class="">
+        <h3>Hello Box</h3>
+        <p>  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam dolore vero labore exercitationem voluptate
+        dignissimos et neque quaerat? Maiores quia ex optio animi facere minima natus exercitationem voluptatibus
+        debitis. Dolores.</p>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="fadeOut" >Fade Out</button>
+        <button id="fadeIn" >Fade In</button>
+        <button id="fadeToggle" >Fade Toggle</button><br><br>
+        <button id="fadeoutCb" >FadeOut CallbackFn</button><br><br>
+        <button id="fadeoutCbToggle" >FadeOut CallbackFn Toggle</button><br><br>
+        <button id="fadeto" >FadeTo</button><br><br>
+        
+        
+
+    </div>
+    <br>
+    <div id="box2"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+       
+           $("#fadeOut").click(function(){
+                $("#box").fadeOut("slow");
+           });
+           $("#fadeIn").click(function(){
+                $("#box").fadeIn(3000);
+           });
+           $("#fadeoutCb").click(function(){
+               $("#box").fadeOut(1500,function(){
+                   $("#box").after("<h4>It get Faded</h4>");
+                   $("h4").css({"color":"red","text-align":"center"});
+                });
+            });
+            $("#fadeToggle").click(function(){
+                 $("#box").fadeToggle(1000);
+            });
+            $("#fadeoutCbToggle").click(function(){
+                $("#box").fadeToggle(1000,function(){
+                    console.log("It get toggled");
+                    
+                });
+            });
+            $("#fadeto").click(function(){
+                 $("#box").fadeTo(2000,0.2,function(){ //20% transparency
+                    $("#box").after("<h4>It get Faded to 20%</h4>");
+                   $("h4").css({"color":"red","text-align":"center"});
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

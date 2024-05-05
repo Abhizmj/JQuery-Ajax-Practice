@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Method Chaining</h1>
+    <div id="box"
+        style="height: 40%;width: 30%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;">
+        <h2>Hello Box</h2>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem aperiam dignissimos natus, doloremque nulla
+            qui? Minima omnis, id accusamus doloremque dicta repellendus, cupiditate minus deserunt et ipsam
+            dignissimos! Minima, cum?
+        </p>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="animate">Animate</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animate").click(function(){
+               $("#box").css("background-color","pink").slideUp(2000).slideDown(2000); 
+            });
+        });
+    </script>
+</body>
+
+</html>

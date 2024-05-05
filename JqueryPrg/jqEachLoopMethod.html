@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Each() Method </h1>
+
+    <div style="text-align: center">
+        <ul style="display: inline-block;font-size: 20px;font-weight: bold;padding: 20px;">
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+
+    <div id="box2"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="each">Each</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#each").click(function(){
+                $("li").each(function(){
+                    $("#box2").append("<h3>"+$(this).text()+"</h3>").css({"color":"red","text-align":"center"});
+                    // console.log($(this).text());
+
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

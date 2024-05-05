@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Animate() Method</h1><br>
+    <div id="box" style="height: 40%;width: 10%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;position: relative;">
+        <h3>Hello Box</h3>
+        
+    </div>
+    <div id="box2"></div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="animate" >Animate</button>
+        <button id="animateMulti" >Animate Serially</button>
+        <button id="animateSlow" >Animate Slowly</button><br><br>
+        <button id="animateCallback" >Animate Callback</button><br><br>
+          
+    </div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animate").click(function(){
+               $("#box").animate({//this only work when position is relative for  
+                 left:"200px",
+                 width:"150px",
+                 fontSize:"15px",
+                 borderWidth:"5px"   
+               })
+            });
+            $("#animateMulti").click(function(){
+               $("#box").animate({left:"200px",fontSize:"15px",width:"+=80"});
+               $("#box").animate({top:"200px"});
+               $("#box").animate({left:"-200px"});
+               $("#box").animate({top:"0px"});
+               $("#box").animate({left:"0px",fontSize:"12px",width:"10%"});
+            });
+            $("#animateSlow").click(function(){
+               $("#box").animate({left:"200px",fontSize:"15px",width:"+=80"},2000);
+               $("#box").animate({top:"200px"},1000);
+               $("#box").animate({left:"-200px"},2000);
+               $("#box").animate({top:"0px"},2000);
+               $("#box").animate({left:"0px",fontSize:"12px",width:"10%"},500);
+            });
+            $("#animateCallback").click(function(){
+               $("#box").animate({left:"200px",fontSize:"15px",width:"+=80"},2000,function(){
+                        $("#box2").append("<h4>Animation Starts</h4>");
+                        $("#box2 h4").css({"color":"red","text-align":"center"});
+               });
+               $("#box").animate({top:"200px"},1000);
+               $("#box").animate({left:"-200px"},2000);
+               $("#box").animate({top:"0px"},2000);
+               $("#box").animate({left:"0px",fontSize:"12px",width:"10%"},500,function(){
+
+                    $("#box2").replaceWith("<h4>Animation closed</h4>");
+                    $("h4").css({"color":"green","text-align":"center"});
+                    $("h4").hide(500);
+               });
+            });
+        });
+    </script>
+</body>
+
+</html>

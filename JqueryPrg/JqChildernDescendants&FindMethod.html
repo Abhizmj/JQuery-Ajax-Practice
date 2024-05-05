@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="margin: auto;text-align: center;">JQuery Descendants Method </h1>
+    <div id="box"
+        style="height: 60%;width: 50%;background-color: #e2e2e2;padding: 10px;border: 2px solid black;margin: auto;">
+        <h2>Main Outer</h2>
+        <div id="outer"
+            style="height: 50%;width: 90%;background-color: orange;padding: 10px;border: 2px solid black;margin: auto;text-align: center;">
+            <h2>Outer</h2>
+            <div id="inner"
+                style="height: 30%;width: 80%;background-color: pink;padding: 10px;border: 2px solid black;margin: auto;">
+                <h2 id="child-head">Inner</h2>
+                <div
+                    style="height: 10%;width: 10%;background-color: lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    A</div>
+                <div
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    B</div>
+                <div id="child-C"
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    C</div>
+                <div
+                    style="height: 10%;width: 10%;background-color:lightblue;padding: 10px;border: 2px solid red;margin: auto;text-align: center;display: inline-block">
+                    D</div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;margin: auto;padding: 10px;">
+        <button id="child">Children</button>
+        <button id="ParticularChild">Particular Child</button>
+        <button id="find">Find</button>
+        <button id="findFromOutter">Find From Outer</button>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#child").click(function(){
+                 $("#inner").children().css("background-color","red");
+            });
+            $("#ParticularChild").click(function(){
+                 $("#inner").children("#child-C").css("background-color","violet");
+            });
+            $("#find").click(function(){
+                 $("#inner").find("#child-C").css("background-color","green");
+                 //$("#outer").find("#child-C").css("background-color","yellow");
+            });
+            $("#findFromOutter").click(function(){
+                 
+                 $("#outer").find("#child-C").css("background-color","yellow");
+            });
+        });
+    </script>
+</body>
+
+</html>
